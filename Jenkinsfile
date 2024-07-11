@@ -1,16 +1,17 @@
+
 pipeline {
     agent any 
     environment {
         DEPLOY_TO = 'production'
     }
     stages {
-        stage('proddeploy') {
+        stage ('ProdDeploy') {
             when {
-                environment name:'DEPLOY_TO', Value:'production'
+                environment name: 'DEPLOY_TO', value: 'production'
             }
             steps {
-                echo "deploy to production"
+                echo "Deploying to production"
             }
-        } 
+        }
     }
 }
